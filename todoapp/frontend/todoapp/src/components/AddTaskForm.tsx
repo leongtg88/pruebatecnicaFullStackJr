@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 

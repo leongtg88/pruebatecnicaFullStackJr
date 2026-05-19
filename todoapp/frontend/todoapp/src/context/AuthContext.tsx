@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import api from '../api/axios';
 
 interface User {
@@ -53,7 +54,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const register = async (username: string, email: string, password: string) => {
-    const { data } = await api.post('/auth/register', { username, email, password });
+   await api.post('/auth/register', { username, email, password });
     // Después de registrarse, automáticamente iniciamos sesión
     await login(email, password);
   };
